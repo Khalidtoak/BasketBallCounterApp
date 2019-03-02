@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--The layout for the basketball activity,
+the root layout is the relative layout-->
     <RelativeLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +9,20 @@
             android:layout_height="wrap_content"
             tools:context=".BasketBallActivity"
             >
+    <!--
+    the frame layout allows you to place views ontop of each oher
+    here the image view is placed inside the frame layout
+    but if you remove the frame layout,
+     you are still cool
+    -->
+        <ImageView android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:id="@+id/image"
+                   android:src="@drawable/basketball_betting"
+                    android:scaleType="centerCrop"/>
+    <!--
+    Linear layout for team a
+    -->
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -17,20 +33,19 @@
                 android:id="@+id/linearLayout1"
         >
             <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/edit_text_properties"
                     android:hint="Team A"
-                    android:layout_gravity="center"
                     android:id="@+id/first_team"
-                    android:layout_marginBottom="16dp"
-                    android:textSize="30sp"
             />
             <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1 point"
                     android:id="@+id/one_point"
+                    android:background="@color/colorAccent"
+                    android:backgroundTint="#9C27B0"
                     android:layout_gravity="center"
+                    android:textColor="@color/button_text"
             />
             <Button
                     android:layout_width="wrap_content"
@@ -54,6 +69,9 @@
                       android:layout_marginTop="30dp"
                       android:padding="8dp"
                       android:layout_gravity="center"
+                      android:background="#FFC107"
+                      android:textColor="#FFF"
+                      android:textColorHint="#FFFF"
             />
         </LinearLayout>
         <View android:layout_width="1dp"
@@ -61,6 +79,9 @@
               android:layout_centerInParent="true"
               android:id="@+id/center"
               android:background="@color/colorAccent"/>
+    <!--
+    Linear layout for team b
+    -->
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -69,13 +90,9 @@
             android:layout_toEndOf="@id/center"
     >
         <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:hint="Team B"
                 android:id="@+id/second_team"
-                android:layout_marginBottom="16dp"
-                android:textSize="30sp"
-                android:layout_gravity="center"
+               style="@style/edit_text_properties"
         />
         <Button
                 android:layout_width="wrap_content"
@@ -97,6 +114,7 @@
                 android:text="3 point"
                 android:onClick="handleThirdPoint"
                 android:layout_gravity="center"
+
         />
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
@@ -106,7 +124,16 @@
                   android:layout_marginTop="24dp"
                   android:padding="8dp"
                   android:id="@+id/point_b"
+                  android:background="#FFC107"
+                  android:textColor="#FFF"
+                  android:textColorHint="#FFFF"
         />
     </LinearLayout>
+    <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+           android:text="reset"
+    android:id="@+id/reset_button"/>
 
 </RelativeLayout>

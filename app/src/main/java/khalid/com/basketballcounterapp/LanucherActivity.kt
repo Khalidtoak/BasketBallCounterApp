@@ -17,7 +17,9 @@ class LanucherActivity : AppCompatActivity() {
                 putExtra(IntentNames.sportName, "BasketBall")
             }
             startActivity(intent)
-
+        }
+        scrolling_activity_buttton.setOnClickListener {
+            startActivity(Intent(this@LanucherActivity, ScrollingActivity::class.java))
         }
     }
 }
